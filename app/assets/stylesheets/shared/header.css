@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header{
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: block;
+  flex-direction: column;
+  z-index: 1;
+  box-shadow: var(--c-shadow-header);
+}
+/*.nav{
+  display: grid;
+    grid-template:
+        ".. .. .. .... .. ... .." 8px
+        ".. my .. logo .. nav .." 40px
+        ".. .. .. .... .. ... .." 8px/auto 1fr 4px 1fr 4px 1fr auto;
+}
+.lists-left{}
+.user-nickname{}
+.logout{}
+.login{}
+.sign-up{}
+.lists-rigth{}
+.search-list{}
+.host-list{}
+*/
