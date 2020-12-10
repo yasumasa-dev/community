@@ -10,19 +10,34 @@
   z-index: 1;
   box-shadow: var(--c-shadow-header);
 }
-/*.nav{
-  display: grid;
-    grid-template:
-        ".. .. .. .... .. ... .." 8px
-        ".. my .. logo .. nav .." 40px
-        ".. .. .. .... .. ... .." 8px/auto 1fr 4px 1fr 4px 1fr auto;
+.nav{
+  display: flex;
+  justify-content: space-around;
 }
-.lists-left{}
-.user-nickname{}
-.logout{}
-.login{}
-.sign-up{}
-.lists-rigth{}
-.search-list{}
-.host-list{}
+.lists-left{
+  display: flex;
+}
+/*
+.user-nickname{
+  margin: 0 20px
+}
+.logout{
+  margin: 0 20px
+}
 */
+.login{
+  margin: 0 20px
+}
+.sign-up{
+  margin: 0 20px
+}
+.lists-rigth{
+  display: flex;
+}
+
+.search-list{
+  margin: 0 20px
+}
+.host-list{
+  margin: 0 20px
+}
