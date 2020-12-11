@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header{
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: block;
+  flex-direction: column;
+  z-index: 1;
+  box-shadow: var(--c-shadow-header);
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+}
+.lists-left{
+  display: flex;
+}
+/*
+.user-nickname{
+  margin: 0 20px
+}
+.logout{
+  margin: 0 20px
+}
+*/
+.login{
+  margin: 0 20px
+}
+.sign-up{
+  margin: 0 20px
+}
+.lists-rigth{
+  display: flex;
+}
+
+.search-list{
+  margin: 0 20px
+}
+.host-list{
+  margin: 0 20px
+}
