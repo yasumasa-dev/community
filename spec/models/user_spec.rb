@@ -108,7 +108,7 @@ describe 'ユーザー新規登録' do
     end
     it "first_nameが全角（漢字・ひらがな・カタカナ）であれば登録できる" do
       @user.first_name = "漢字ひらカタ"
-      expect(@user).to be_valid     
+      expect(@user).to be_valid
     end
     it "first_name_kanaが全角（カタカナ）であれば登録できる" do
       @user.first_name_kana = "カナ"
@@ -120,7 +120,7 @@ describe 'ユーザー新規登録' do
     end
     it "last_name_kanaが全角（カタカナ）であれば登録できる" do
       @user.last_name_kana = "カナ"
-      expect(@user).to be_valid  
+      expect(@user).to be_valid 
     end
   end
   
