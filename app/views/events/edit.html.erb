@@ -1,0 +1,53 @@
+<%= render partial:'header' %>
+<div class='main'>
+  <div class='word-list'>
+
+  <h2 class="events-title">イベント情報を入力</h2>
+    <%= form_with local: true do |f| %>
+
+    <%# render 'shared/error_messages', model: f.object %>
+
+    <div class="new-events">
+      <div class="weight-bold-text">
+        イベント名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :hoge, class:"events-text", id:"event-name", placeholder:"イベント名（必須 40文字まで)", maxlength:"40" %>
+      <div class="events-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :hoge, class:"events-text", id:"event-info", placeholder:"イベントの内容（必須 1,000文字まで）（参加条件、準備物、交通手段、費用、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="items-detail">
+      <div class="weight-bold-text">イベントの詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"event-category"}) %>
+        <div class="weight-bold-text">
+          日時
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"event-date"}) %>
+                <div class="weight-bold-text">
+          場所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"event-location"}) %>
+      </div>
+    </div>
+
+    <div class="host-btn-contents">
+      <%= f.submit "編集する" ,class:"host-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+
+  </div>
+</div>
+<%= render partial:'footer' %>
