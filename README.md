@@ -48,6 +48,9 @@ Things you may want to cover:
 | date        | date       | null: false                    |
 | explanation | string     | null: false                    |
 | user        | references | null: false, foreign_key: true |
+| location_id | integer    | null: false                    |
+| date-id     | integer    | null: false                    |
+| category-id | integer    | null: false                    |
 
 ### Association
 - belongs_to :user
