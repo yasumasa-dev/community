@@ -9,11 +9,28 @@
       </div>
     </div>
 
+
+<div class='event-contents'>
 <h2 class="title-content">- Event Category -</h2>
-<h2>アウトドア</h2>
-<h2>インドア</h2>
-<h2>フード</h2>
-<h2>ペット</h2>
+  <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <ul class='event-lists'>
+
+      <% @items.each do |item| %>
+      <li class='list'>
+        <%#= link_to event_path(event.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: "item-img" %>
+        </div>
+
+        <div class='event-info'>
+          <h3 class='event-name'>
+            <%= event.title %>
+          </h3>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+
 <h2 class="title-content">- Release Events -</h2>
 <h2 class="title-content">- Store location -</h2>
 
