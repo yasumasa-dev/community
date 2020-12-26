@@ -1,3 +1,61 @@
 <%= render partial:'header' %>
 
+<div class="event-show">
+  <div class="event-box">
+    <h2 class="name">
+      <%= @event.title %>
+    </h2>
+    <div class='event-img-content'>
+      <%= image_tag @event.image ,class:"event-box-img" %>
+
+  <% if user_signed_in?%>
+   <% if current_user.id == @event.user_id %>
+    <%= link_to '主催内容の編集', edit_event_path(@event.id), method: :get, class: "event-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除', event_path(@event.id), method: :delete, class:'event-destroy' %>
+   <% elsif @event.order.nil? %>
+    <%= link_to '参加画面に進む', item_orders_path(@event.id), method: :get, class:"event-red-btn"%>
+   <% end %>
+  <% end %>
+
+    <div class="item-explain-box">
+      <span><%= @item.explanation %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">主催者</th>
+          <td class="detail-value"><%= @event.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @event.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">場所</th>
+          <td class="detail-value"><%= @event.location.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">日時</th>
+          <td class="detail-value"><%= @event.date.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+
 <%= render partial:'footer' %>
