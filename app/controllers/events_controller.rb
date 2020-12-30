@@ -23,6 +23,22 @@ class EventsController < ApplicationController
     @event = Event.includes(:user).find(params[id])
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    unless current_user == @event.user
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(events_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
+  end
+
   private
   def events_params
     params.require(:event).permit(:title,
