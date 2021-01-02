@@ -12,13 +12,13 @@
         イベント名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"events-text", id:"event-name", placeholder:"イベント名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :title, class:"events-text", id:"event-name", placeholder:"イベント名（必須 40文字まで)", maxlength:"40" %>
       <div class="events-explain">
         <div class="weight-bold-text">
           イベントの説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"events-text", id:"event-info", placeholder:"イベントの内容（必須 1,000文字まで）（参加条件、準備物、交通手段、費用、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :explanation, class:"events-text", id:"event-info", placeholder:"イベントの内容（必須 1,000文字まで）（参加条件、準備物、交通手段、費用、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"event-category"}) %>
+        <%= f.collection_select(:categoty_id_id, CategoryId.all, :id, :name, {}, {class:"select-box", id:"event-category"}) %>
         <div class="weight-bold-text">
           日時
           <span class="indispensable">必須</span>
@@ -39,7 +39,7 @@
           場所
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"event-location"}) %>
+        <%= f.collection_select(:location_id_id, LocationId.all :id, :name, {}, {class:"select-box", id:"event-location"}) %>
       </div>
     </div>
 
