@@ -14,29 +14,29 @@
     <p class='or-text'>or</p>
     <%= link_to '削除', event_path(@event.id), method: :delete, class:'event-destroy' %>
    <% elsif @event.order.nil? %>
-    <%= link_to '参加画面に進む', item_orders_path(@event.id), method: :get, class:"event-red-btn"%>
+    <%#= link_to '参加画面に進む', event_join_path(@event.id), method: :get, class:"event-red-btn"%>
    <% end %>
   <% end %>
 
     <div class="item-explain-box">
-      <span><%= @item.explanation %></span>
+      <span><%= @event.explanation %></span>
     </div>
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">主催者</th>
+          <th class="detail-event">主催者</th>
           <td class="detail-value"><%= @event.user.nickname %></td>
         </tr>
         <tr>
-          <th class="detail-item">カテゴリー</th>
+          <th class="detail-event">カテゴリー</th>
           <td class="detail-value"><%= @event.category.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">場所</th>
+          <th class="detail-event">場所</th>
           <td class="detail-value"><%= @event.location.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">日時</th>
+          <th class="detail-event">日時</th>
           <td class="detail-value"><%= @event.date.name %></td>
         </tr>
       </tbody>
