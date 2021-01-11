@@ -39,6 +39,13 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.id == @event.user_id
+      @event.destroy
+    end
+    redirect_to root_path
+  end
+
   private
   def events_params
     params.require(:event).permit(:title,
